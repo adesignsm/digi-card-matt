@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Bloom, EffectComposer } from '@react-three/postprocessing'
+import { Bloom, EffectComposer, Noise } from '@react-three/postprocessing'
 import { Box, OrbitControls, RoundedBox } from "@react-three/drei";
 import { TextureLoader, DoubleSide } from "three";
 import * as THREE from 'three';
@@ -71,9 +71,11 @@ const App = () => {
                 <div id="canvas-container">
                     <Canvas frameloop="always" camera={{ fov: 75, near: 0.1, far: 10000, position: [0, 0, 1] }}>
                         {/* <PointerLockControls selector="#stage-one-canvas" /> */}
+                        <ambientLight intensity={1} />
                         <Card />
                         <EffectComposer>
-                            <Bloom luminanceThreshold={1} luminanceSmoothing={1} height={window.innerHeight} />
+                            <Bloom luminanceThreshold={1} luminanceSmoothing={0.1} height={window.innerHeight} />
+                            <Noise opacity={0.2} />
                         </EffectComposer>
                         <OrbitControls ref={controlsRef} enableZoom={true} />
                     </Canvas>
