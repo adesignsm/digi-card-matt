@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body, html {
+    background-image: url(./Assets/BG.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#enter-scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./Assets/gif.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #000;
+}
+
+#enter-scene button {
+    margin-top: 50vh;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1em;
+    width: 300px;
+    padding: 2rem;
+    font-family: 'Press Start 2P';
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: black;
+        color: white;
+    }
+    50% {
+        background-color: white;
+        color: black;
+    }
+}
